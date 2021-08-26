@@ -1,0 +1,72 @@
+{
+  "name": "nestjs-rave",
+  "version": "1.0.0",
+  "description": "Provides an injectable rave client for nestjs module",
+  "author": {
+    "name": "Muritala David"
+  },
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fn-studyo/nestjs-rave"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write '**/*.md' '**/*.json' '**/*.ts' '**/*.yml' .prettierrc",
+    "prebuild": "rimraf lib",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:watch": "jest --watch",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^7.0.7",
+    "@nestjs/core": "^7.0.7",
+    "@nestjs/testing": "^7.0.7",
+    "@types/jest": "25.2.1",
+    "@types/node": "13.11.0",
+    "@types/flutterwave-node": "1.0.1",
+    "codecov": "3.7.1",
+    "coveralls": "3.1.0",
+    "jest": "25.2.7",
+    "paystack": "2.0.1",
+    "flutterwave-node": "1.2.2",
+    "prettier": "2.0.2",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "rxjs": "6.6.0",
+    "ts-jest": "25.2.1",
+    "typescript": "3.8.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "paystack": "2.0.1",
+    "flutterwave-node": "1.2.2"
+  },
+  "keywords": [
+    "nestjs",
+    "rave",
+    "payments"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
